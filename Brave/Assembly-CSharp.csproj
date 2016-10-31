@@ -49,7 +49,7 @@
      <Compile Include="Assets\Script\BaseEnemy.cs" />
      <Compile Include="Assets\Script\BasePlayer.cs" />
      <Compile Include="Assets\Script\Brave.cs" />
-     <Compile Include="Assets\Script\Character＿Manager.cs" />
+     <Compile Include="Assets\Script\Character_Manager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

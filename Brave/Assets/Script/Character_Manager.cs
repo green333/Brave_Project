@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character＿Manager : MonoBehaviour {
+public class Character_Manager : MonoBehaviour
+{
 
     [SerializeField]
     private GameObject[] player;  //操作キャラ(仲間)
@@ -15,17 +16,19 @@ public class Character＿Manager : MonoBehaviour {
     //  初期化
 
     //------------------------------------------------------------
-    void Start () {
+    void Start()
+    {
 
-	
-	}
+
+    }
 
     //------------------------------------------------------------
 
     //更新
 
     //------------------------------------------------------------
-    void Update () {
-	
-	}
+    void Update()
+    {
+
+    }
 }
