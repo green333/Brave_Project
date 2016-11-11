@@ -45,11 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\BaseCharacter.cs" />
-     <Compile Include="Assets\Script\BaseEnemy.cs" />
-     <Compile Include="Assets\Script\BasePlayer.cs" />
      <Compile Include="Assets\Script\Brave.cs" />
+     <Compile Include="Assets\Script\Button_Act.cs" />
      <Compile Include="Assets\Script\Character_Manager.cs" />
+     <Compile Include="Assets\Script\PlayerManager.cs" />
+     <Compile Include="Assets\Script\SceneChange.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
