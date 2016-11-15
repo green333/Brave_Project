@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour {
 
     //------------------------------------------
     void Start () {
-        Debug.Log("現在のキャラ数:" + Button_Act.char_num);
+        Debug.Log("現在のキャラ数:" + Char_Button.char_num);
 
         player = PLAYER.NORMAL;
         //GameObject players = (GameObject)Resources.Load("Prefab/player");
@@ -38,31 +38,31 @@ public class PlayerManager : MonoBehaviour {
 
         //------------------
         //  ノーマル
-        if(Button_Act.char_select ==1)
+        if(Char_Button.char_select == 1)
         {
-            Instantiate(players[0], new Vector3(0, 1.0f, 0), Quaternion.identity);
+            Instantiate(players[0], new Vector3(0, 1.5f, 0), Quaternion.identity);
         }
 
         //------------------
         //  ノーマル
-        if (Button_Act.char_select == 2)
+        if (Char_Button.char_select == 2)
         {
-            Instantiate(players[1], new Vector3(0, 1.0f, 0), Quaternion.identity);
+            Instantiate(players[1], new Vector3(0, 1.5f, 0), Quaternion.identity);
         }
 
         //------------------
         //  ノーマル
-        if (Button_Act.char_select == 3)
+        if (Char_Button.char_select == 3)
         {
-            Instantiate(players[0], new Vector3(0, 1.0f, 0), Quaternion.identity);
-            Instantiate(players[1], new Vector3(0, 1.0f, 0), Quaternion.identity);
+            Instantiate(players[0], new Vector3(0, 1.5f, 0), Quaternion.identity);
+            Instantiate(players[1], new Vector3(0, 1.5f, 0), Quaternion.identity);
         }
 
         //------------------
         //  ノーマル
-        if (Button_Act.char_select == 4)
+        if (Char_Button.char_select == 4)
         {
-            Instantiate(players[3], new Vector3(0, 1.0f, 0), Quaternion.identity);
+            Instantiate(players[3], new Vector3(0, 1.5f, 0), Quaternion.identity);
         }
 
 

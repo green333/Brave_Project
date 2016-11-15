@@ -66,6 +66,7 @@ public class Brave : MonoBehaviour
     [SerializeField]
     private new Camera camera;          //カメラ
 
+
     //------------------------------------------
 
     //  初期化
@@ -73,8 +74,6 @@ public class Brave : MonoBehaviour
     //------------------------------------------
     void Start()
     {
-
-
         camera = Camera.main;   //プレイヤーへターゲットする
 
 
@@ -83,19 +82,17 @@ public class Brave : MonoBehaviour
             case Ability.NORMAL:
                 SetAbility(4.0f, 3.5f);
                 break;
-
         }
 
 
-
-        //if (Button_Act.char_num == 1)
-        //{
-        //    p_state = P_State.CONTROL;
-        //}
-        //else
-        //{
-        //    p_state = P_State.TRAKING;
-        //}
+        if (Char_Button.char_num == 1)
+        {
+            p_state = P_State.CONTROL;
+        }
+        else
+        {
+            p_state = P_State.TRAKING;
+        }
     }
 
 
@@ -172,7 +169,7 @@ public class Brave : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            var anime = this.gameObject.GetComponent<Animator>();
+            var anime = gameObject.GetComponent<Animator>();
             rigidbody.velocity = new Vector2(0, jump);
         }
 
