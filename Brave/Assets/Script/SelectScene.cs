@@ -16,6 +16,7 @@ public class SelectScene : Scene {
 
     public void OnClick()
     {
+
         ChangeScene(filename);
     }
 }

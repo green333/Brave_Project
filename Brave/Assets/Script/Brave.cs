@@ -169,7 +169,7 @@ public class Brave : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            var anime = gameObject.GetComponent<Animator>();
+            //var anime = gameObject.GetComponent<Animator>();
             rigidbody.velocity = new Vector2(0, jump);
         }
 
