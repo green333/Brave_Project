@@ -36,6 +36,8 @@ public class Char_Button : MonoBehaviour {
 
 
 
+
+
     //-------------------------
 
     //  更新
@@ -71,7 +73,7 @@ public class Char_Button : MonoBehaviour {
         }
         else
         {
-            char_select |= own_number;    //フラグ降ろす
+            char_select ^= own_number;    //フラグ降ろす
             char_num--;
         }
         Debug.Log("現在のビット:" + char_select);
