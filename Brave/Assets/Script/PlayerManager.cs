@@ -8,19 +8,14 @@ public class PlayerManager : MonoBehaviour {
 
     protected enum PLAYER
     {
-        NORMAL   = 00000001,       //普通             1
-        SPEEDER  = 00000010,       //スピード重視     2
-        WEIGHTER = 00000100,       //重さ重視         3
-        JUMPER   = 00001000,       //ジャンプ力       4
-        SHORTER  = 00010000,       //近距離           5
-        LONGER   = 00100000,       //遠距離           6
+        NORMAL   = 0x001,       //普通             1
+        SPEEDER  = 0x002,       //スピード重視     2
+        WEIGHTER = 0x004,       //重さ重視         3
+        JUMPER   = 0x008,       //ジャンプ力       4
+        SHORTER  = 0x010,       //近距離           5
+        LONGER   = 0x040,       //遠距離           6
                                    //                 7                    
                                    //                 8
-
-
-
-
-
     }
 
     //[SerializeField]
@@ -36,7 +31,6 @@ public class PlayerManager : MonoBehaviour {
         Debug.Log("現在のキャラ数:" + Char_Button.char_num);
 
         //GameObject players = (GameObject)Resources.Load("Prefab/player");
-
 
 
         switch (Char_Button.char_select)
