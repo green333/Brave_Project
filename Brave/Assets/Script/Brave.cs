@@ -66,6 +66,8 @@ public class Brave : MonoBehaviour
     [SerializeField]
     private new Camera camera;          //カメラ
 
+    private bool jumpflg;        //複数回禁止(ジャンプ)
+
 
     //------------------------------------------
 
@@ -76,15 +78,6 @@ public class Brave : MonoBehaviour
     {
         camera = Camera.main;   //プレイヤーへターゲットする
 
-
-        switch(ability)
-        {
-            case Ability.NORMAL:
-                SetAbility(4.0f, 3.5f);
-                break;
-        }
-
-
         if (Char_Button.char_num == 1)
         {
             p_state = P_State.CONTROL;
@@ -94,15 +87,6 @@ public class Brave : MonoBehaviour
             p_state = P_State.TRAKING;
         }
     }
-
-
-    void SetAbility(float jump,float spd)
-    {
-        this.jump = jump;
-        this.spd = spd;
-    }
-
-
 
     //------------------------------------------
 
@@ -124,10 +108,21 @@ public class Brave : MonoBehaviour
                 }
                 break;
         }
+
         Replacement();
         Camera_Target();
     }
 
+
+    //------------------------------------------
+
+    //  物理挙動がある時
+
+    //------------------------------------------
+    void FixedUpdate()
+    {
+
+    }
 
     //------------------------------------------
 
@@ -167,8 +162,9 @@ public class Brave : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) & !jumpflg)
         {
+            jumpflg = true;
             //var anime = gameObject.GetComponent<Animator>();
             rigidbody.velocity = new Vector2(0, jump);
         }
@@ -198,7 +194,7 @@ public class Brave : MonoBehaviour
     //------------------------------------------
     void Replacement()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) & Char_Button.char_num != 1)
         {
             p_state++;
         }
@@ -222,6 +218,8 @@ public class Brave : MonoBehaviour
         {
             track_wait = true;
         }
+
+        
     }
 
 
@@ -235,6 +233,22 @@ public class Brave : MonoBehaviour
         if (other.tag == tag_name)
         {
             track_wait = false;
+        }
+
+
+    }
+
+
+    //------------------------------------------
+
+    //  地面に着けば飛べる
+
+    //------------------------------------------
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Ground")
+        {
+            jumpflg = false;
         }
     }
 

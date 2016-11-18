@@ -26,7 +26,7 @@ public class Char_Button : MonoBehaviour {
 
 
     //-------------------------
-
+    
     //  初期化
 
     //-------------------------
