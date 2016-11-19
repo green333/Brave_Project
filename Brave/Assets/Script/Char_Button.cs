@@ -24,6 +24,10 @@ public class Char_Button : MonoBehaviour {
     [SerializeField]
     private Sprite choice;     //選択中の画像
 
+//    [SerializeField]
+//    private GameObject character;
+
+//    private GameObject instance;     //生成
 
     //-------------------------
     
@@ -70,11 +74,17 @@ public class Char_Button : MonoBehaviour {
         {
             char_select |= own_number;    //フラグ立てる
             char_num++;
+
+            //instance = (GameObject)Instantiate(character, new Vector3(0, 1.5f, 0), Quaternion.identity);
+
         }
         else
         {
             char_select ^= own_number;    //フラグ降ろす
             char_num--;
+
+            //Destroy(instance);
+
         }
         Debug.Log("現在のビット:" + char_select);
 

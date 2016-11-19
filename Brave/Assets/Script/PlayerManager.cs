@@ -9,13 +9,13 @@ public class PlayerManager : MonoBehaviour {
     //ビット演算用
     protected enum PLAYER
     {
-        NONE     = 0x00,
-        NORMAL   = 0x01,       //普通             1
-        SPEEDER  = 0x02,       //スピード重視     2
+        NONE = 0x00,
+        NORMAL = 0x01,       //普通             1
+        SPEEDER = 0x02,       //スピード重視     2
         WEIGHTER = 0x04,       //重さ重視         3
-        JUMPER   = 0x08,       //ジャンプ力       4
-        SHORTER  = 0x10,       //近距離           5
-        LONGER   = 0x40,       //遠距離           6
+        JUMPER = 0x08,       //ジャンプ力       4
+        SHORTER = 0x10,       //近距離           5
+        LONGER = 0x40,       //遠距離           6
     }
 
     //配列
@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour {
     //  初期化
 
     //------------------------------------------
-    void Start () {
+    void Start() {
         Debug.Log("現在のキャラ数:" + Char_Button.char_num);
 
         Player_Create();
@@ -73,36 +73,41 @@ public class PlayerManager : MonoBehaviour {
 
     void Player_Create()
     {
-        if ((Char_Button.char_select & (int)PLAYER.NORMAL) != 0){
-            Instantiate(players[(int)ABILITY.NORMAL], new Vector3(0, 1.5f, 0), Quaternion.identity);
+        if ((Char_Button.char_select & (int)PLAYER.NORMAL) != 0) {
+            Set_Character(ABILITY.NORMAL);
             Debug.Log("normal");
         }
 
-        if ((Char_Button.char_select & (int)PLAYER.SPEEDER) != 0){
-            Instantiate(players[(int)ABILITY.SPEEDER], new Vector3(0, 1.5f, 0), Quaternion.identity);
+        if ((Char_Button.char_select & (int)PLAYER.SPEEDER) != 0) {
+            Set_Character(ABILITY.SPEEDER);
             Debug.Log("speed");
         }
 
         if ((Char_Button.char_select & (int)PLAYER.WEIGHTER) != 0)
         {
-            Instantiate(players[(int)ABILITY.WEIGHTER], new Vector3(0, 1.5f, 0), Quaternion.identity);
+            Set_Character(ABILITY.WEIGHTER);
             Debug.Log("weight");
         }
 
         if ((Char_Button.char_select & (int)PLAYER.JUMPER) != 0)
         {
-            Instantiate(players[(int)ABILITY.JUMPER], new Vector3(0, 1.5f, 0), Quaternion.identity);
+            Set_Character(ABILITY.JUMPER);
             Debug.Log("jump");
         }
 
         if ((Char_Button.char_select & (int)PLAYER.SHORTER) != 0)
         {
-            Instantiate(players[(int)ABILITY.SHORTER], new Vector3(0, 1.5f, 0), Quaternion.identity);
+            Set_Character(ABILITY.SHORTER);
             Debug.Log("short");
         }
 
     }
 
+
+    void Set_Character(ABILITY ability)
+    {
+        Instantiate(players[(int)ability], new Vector3(0, 1.5f, 0), Quaternion.identity);
+    }
 
 
     //------------------------------------------
